@@ -1,12 +1,18 @@
 <div class="row">
     <h3>Listagem de Posts</h3>
-    <app-button color="primary" routerLink="/posts/create">
-        <app-glyph 
-            codeIcon="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
-            colorIcon="#000"        
-        >
-        </app-glyph> Criar
-    </app-button>
+    <div class="col-md-12">
+        <app-button color="primary" routerLink="/posts/create">
+            <app-glyph 
+                codeIcon="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"
+                colorIcon="#000"        
+            >
+            </app-glyph> Criar
+        </app-button>
+    </div>
+    <br/><br/>
+    <div class="col-md-12" *ngIf="message">
+        <app-alert [close]="true" [timeout]="4000">{{message}}</app-alert>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
